@@ -6,11 +6,15 @@ class DogsController < ApplicationController
   def create
     @dog = Dog.new(list_params)
     if @dog.save
-      redirect_to @dog, notice: 'List was successfully created.'
+      redirect_to @dog, notice: 'Your new pup was successfully added.'
     else
       render :new
     end
   end
+
+def book
+  # I need to be able to change the booked state from false to true
+end
 
   private
 
