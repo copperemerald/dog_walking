@@ -14,11 +14,14 @@ class DogsController < ApplicationController
 
 def book
   # I need to be able to change the booked state from false to true
+  @dog = Dog.find(params[:id])
+  @dog.book
+  redirect_to @dog
 end
 
   private
 
   def list_params
-    params.require(:dog).permit(:name, :description, :location, :photo)
+    params.require(:dog).permit(:name, :description, :location, :photo, :booked)
   end
 end
