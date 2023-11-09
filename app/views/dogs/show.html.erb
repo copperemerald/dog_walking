@@ -1,7 +1,7 @@
 
-
-<div class="profile">
-  <h1> Find out all about <%= @dog.name %>
+<div class="container mt-5">
+  <h1> Find out all about <%= @dog.name %></h1>
   <h2><%= @dog.description %></h2>
   <p><%= @dog.location %></p>
- 
+  <%= image_tag("dogs/#{@dog.name}.jpg") %>
+</div>
