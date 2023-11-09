@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, path: '', path_names: {sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
   root to: "pages#home"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  # get "/:id", to: "dogs#show"
   # Defines the root path route ("/")
   resources :dogs, only: [:index, :show, :new, :create]
+
   # root "articles#index"
 end
