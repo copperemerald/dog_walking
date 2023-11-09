@@ -19,6 +19,10 @@ def book
   redirect_to @dog
 end
 
+  def show
+    @dog = Dog.find(params[:id])
+  end
+
   private
 
   def list_params
