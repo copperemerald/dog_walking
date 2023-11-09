@@ -1,8 +1,8 @@
 class DogsController < ApplicationController
-<<<<<<< HEAD
   def index
     @dogs = Dogs.all
-=======
+  end
+  
   def new
     @dog = Dog.new
   end
@@ -19,11 +19,10 @@ class DogsController < ApplicationController
   def show
     @dog = Dog.find(params[:id])
   end
-  
+
   private
 
   def list_params
     params.require(:dog).permit(:name, :description, :location, :photo)
->>>>>>> master
   end
 end
