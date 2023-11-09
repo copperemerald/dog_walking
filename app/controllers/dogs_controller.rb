@@ -12,6 +12,10 @@ class DogsController < ApplicationController
     end
   end
 
+  def show
+    @dog = Dog.find(params[:id])
+  end
+  
   private
 
   def list_params
