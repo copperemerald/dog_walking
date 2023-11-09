@@ -4,7 +4,7 @@ class DogsController < ApplicationController
   end
 
   def create
-    @dog = Dog.new(list_params)
+    @dog = Dog.new(dog_params)
     if @dog.save
       redirect_to @dog, notice: 'List was successfully created.'
     else
@@ -14,7 +14,7 @@ class DogsController < ApplicationController
 
   private
 
-  def list_params
+  def dog_params
     params.require(:dog).permit(:name, :description, :location, :photo)
   end
 end
