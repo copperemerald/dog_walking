@@ -3,5 +3,9 @@
   <h1> Find out all about <%= @dog.name %></h1>
   <h2><%= @dog.description %></h2>
   <p><%= @dog.location %></p>
-  <%# <%= image_tag("dogs/#{@dog.name}.jpg") %>
+   <% if @dog.photo.attached? %>
+    <%= cl_image_tag @dog.photo.key, height: 300, width: 400, crop: :fill %>
+  <% else %>
+    <p>No Image Uploaded</p>
+  <% end %>
 </div>

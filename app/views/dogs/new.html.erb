@@ -1,13 +1,12 @@
 <div class="container mt-5">
   <h1>Create a new Dog Profile</h1>
 
-#updatae to simple_form
 
 <%= simple_form_for(@dog) do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.input :location %>
-  <%= f.input :photo%>
+  <%= f.input :photo, as: :file %>
   <%= f.submit %>
 <% end %>
 
