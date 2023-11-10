@@ -1,15 +1,13 @@
 <div class="container mt-5">
   <h1>Create a new Dog Profile</h1>
 
-  <%= form_with(model: @dog, local: true) do |form| %>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-    <%= form.label :location %>
-    <%= form.text_field :location %>
-    <%= form.label :photo %>
-    <%= form.file_field :photo %>
-    <%= form.submit "Create List" %>
-  <% end %>
+
+<%= simple_form_for(@dog) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :location %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit %>
+<% end %>
+
 </div>
