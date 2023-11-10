@@ -1,28 +1,6 @@
 class DogsController < ApplicationController
   def index
-    @dogs = Dogs.all
-  end
-  
-  def new
-    @dog = Dog.new
+    @dogs = Dog.all
   end
 
-  def create
-    @dog = Dog.new(list_params)
-    if @dog.save
-      redirect_to @dog, notice: 'List was successfully created.'
-    else
-      render :new
-    end
-  end
-
-  def show
-    @dog = Dog.find(params[:id])
-  end
-
-  private
-
-  def list_params
-    params.require(:dog).permit(:name, :description, :location, :photo)
-  end
 end
