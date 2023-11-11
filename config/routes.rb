@@ -3,9 +3,7 @@ Rails.application.routes.draw do
   root to: "dogs#index"
   # Defines the root path route ("/")
   resources :dogs, only: [:index, :show, :new, :create] do
-    resources :bookings, only: [:new, :create, :show, :index]
+    resources :bookings, only: [:new, :create]
   end
-
-
-  # root "articles#index"
+  resources :bookings, only: [:show, :index]
 end
