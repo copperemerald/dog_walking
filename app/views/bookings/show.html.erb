@@ -1,0 +1,12 @@
+<div>
+  <h2>Here is a list of your bookings</h2>
+  <ul>
+    <% puts @booking.all %>
+    <% @bookings.each do | booking | %>
+  <li>
+    <p><%= booking.date %></p></li>
+    <p><%= booking.dog_id %></p></li>
+    <p><%= booking.comment %></p></li>
+  <% end %>
+  </ul>
+</div>
