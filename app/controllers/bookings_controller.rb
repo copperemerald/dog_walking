@@ -23,7 +23,8 @@ class BookingsController < ApplicationController
   end
 
   def index
-    @bookings = Booking.all
+    # @bookings = Booking.all
+    @booking = Booking.where(user_id: current_user)
   end
 
   # def book
@@ -31,6 +32,11 @@ class BookingsController < ApplicationController
   #   @dog.book
   #   redirect_to @dog
   # end
+
+  def show
+    @booking = Booking.where(user_id: current_user)
+    # @booking = Booking.find(params[:dog_id], [current_user.id]).where(current_user == user_session)
+  end
 
   private
 
