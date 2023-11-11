@@ -5,7 +5,7 @@
   <ul>
     <% @dogs.each do |dog| %>
       <li>
-        <p><%= dog.name %></p>
+        <p><%= link_to dog.name, dog_path(dog) %></p>
         <p><%= dog.description %></p>
         <p><%= dog.location %></p>
          <% if dog.photo.attached? %>
@@ -18,4 +18,5 @@
     <% end %>
   </ul>
 
+ <%= link_to "Add a Dog", new_dog_path %>
 </div>
