@@ -11,7 +11,7 @@
         <p><%= booking.date %></p>
         <p><%= Dog.find_by(id: booking.dog_id).name %></p>
         <p><%= booking.comment %></p>
-        <%= link_to "Back to Dogs", dog_path %>
+        <%= link_to "Back to all Dogs", dogs_path %>
       </li>
     </div>
     <% end %>
