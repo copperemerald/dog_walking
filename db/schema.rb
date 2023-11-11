@@ -60,6 +60,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_09_182030) do
     t.text "description"
     t.string "location"
     t.bigint "user_id", null: false
+    t.boolean "booked", default: false
     t.index ["user_id"], name: "index_dogs_on_user_id"
   end
 

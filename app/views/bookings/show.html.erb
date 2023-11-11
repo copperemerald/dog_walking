@@ -1,0 +1,20 @@
+<div class="container mt-5">
+
+
+  <h2>Hi, <%= User.find_by(id: current_user).email %>
+  Please see a list of your upcoming bookings: </h2>
+  <ul>
+    <% @booking.each do | booking | %>
+    <div class="container mt-5">
+      <li>
+        <%# <% puts @booking %>
+        <p><%= booking.date %></p>
+        <p><%= Dog.find_by(id: booking.dog_id).name %></p>
+        <%# <p><%= Dog.where(id: booking.dog_id).photo</p> %>
+        <p><%= booking.comment %></p>
+
+      </li>
+    </div>
+    <% end %>
+  </ul>
+</div>
