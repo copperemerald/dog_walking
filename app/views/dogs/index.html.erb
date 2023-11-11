@@ -1,0 +1,21 @@
+<div class="container mt-5">
+
+  <h1>Dogs available for walk</h1>
+
+  <ul>
+    <% @dogs.each do |dog| %>
+      <li>
+        <p><%= dog.name %></p>
+        <p><%= dog.description %></p>
+        <p><%= dog.location %></p>
+         <% if dog.photo.attached? %>
+          <%= cl_image_tag dog.photo.key, height: 300, width: 400, crop: :fill %>
+            <% else %>
+            <p>No Image Uploaded</p>
+            <% end %>
+
+      </li>
+    <% end %>
+  </ul>
+
+</div>
