@@ -1,14 +1,16 @@
 class DogsController < ApplicationController
+
   def new
     @dog = Dog.new
   end
 
   def create
-    @dog = Dog.new(list_params)
+    @dog = Dog.new(dog_params)
+    @dog.user = current_user
     if @dog.save
-      redirect_to @dog, notice: 'List was successfully created.'
+      redirect_to @dog, notice: 'Dog was successfully added.'
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -18,8 +20,8 @@ class DogsController < ApplicationController
 
   private
 
-  def list_params
-    params.require(:dog).permit(:name, :description, :location, :photo)
+  def dog_params
+    params.require(:dog).permit(:name, :description, :location, :photo, :user_id)
   end
 end
 
