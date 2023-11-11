@@ -10,9 +10,8 @@
         <%# <% puts @booking %>
         <p><%= booking.date %></p>
         <p><%= Dog.find_by(id: booking.dog_id).name %></p>
-        <%# <p><%= Dog.where(id: booking.dog_id).photo</p> %>
         <p><%= booking.comment %></p>
-
+        <%= link_to "Back to Dogs", dog_path %>
       </li>
     </div>
     <% end %>

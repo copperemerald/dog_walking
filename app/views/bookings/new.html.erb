@@ -1,5 +1,9 @@
-<%= simple_form_for [@dog, @booking] do |f| %>
-  <%= f.input :date %>
-  <%= f.input :comment %>
-  <%= f.submit "Submit review", class: "btn btn-primary" %>
-<% end %>
+<div class="container">
+  <h2>You are about to book some quality time with <%= @dog.name %></h2>
+  <p> </p>
+  <%= simple_form_for [@dog, @booking] do |f| %>
+    <%= f.input :date %>
+    <%= f.input :comment %>
+    <%= f.submit "Create booking", class: "btn btn-primary" %>
+  <% end %>
+</div>

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   resources :dogs, only: [:index, :show, :new, :create] do
     resources :bookings, only: [:new, :create, :show, :index]
+    # get "index" , to: "booking#index"
   end
 
 
