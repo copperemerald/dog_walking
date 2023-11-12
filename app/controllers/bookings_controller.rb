@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
     if @booking.save
 
       # redirect_to booking_path(@booking), notice: 'Congrats, enjoy the walk!!'
-      redirect_to dog_bookings_path, notice: 'Congrats, enjoy the walk!!'
+      redirect_to bookings_path #notice: 'Congrats, enjoy the walk!!'
     else
       puts @booking.errors.messages
       render :new, status: :unprocessable_entity
