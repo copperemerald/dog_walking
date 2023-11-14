@@ -1,4 +1,4 @@
-
+<head><link rel="stylesheet" href="_pages.scss"></head>
 <div class="container mt-5">
   <h1> Find out all about <%= @dog.name %></h1>
   <h2><%= @dog.description %></h2>
@@ -9,9 +9,7 @@
     <p>No Image Uploaded</p>
   <% end %>
 
-   <%= link_to "Back to all dogs", dogs_path %>
+   <%# <%= Button class="btn-green" link_to "Back to all dogs", dogs_path %>
 </div>
 
-
-
-
+<%= link_to "Back to all dogs", dogs_path, class: "btn btn-secondary" %>
