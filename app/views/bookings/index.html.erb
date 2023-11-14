@@ -2,34 +2,45 @@
 
 
   <h2>Hi, <%= User.find_by(id: current_user).email %>
-  Please see a list of booking requests to walk your dog: </h2>
-  <ul>
-    <% @dog_bookings.each do | booking | %>
-    <div class="container mt-5">
-      <li>
-        <p>Booking Date: <%= booking.date %></p>
-        <p>Dog Name: <%= Dog.find_by(id: booking.dog_id).name %></p>
-        <p>Walker Comment: <%= booking.comment %></p>
-        <p>Status: <%= booking.status %></p>
+  Booking requests to walk your dog: </h2>
+  <% if @dog_bookings.empty? %>
+    <p>No bookings.</p>
+  <% else %>
+    <ul>
+      <% @dog_bookings.each do | booking | %>
+      <div class="container mt-5">
+        <li>
+          <p>Booking Date: <%= booking.date %></p>
+          <p>Dog Name: <%= Dog.find_by(id: booking.dog_id).name %></p>
+          <p>Walker Comment: <%= booking.comment %></p>
+          <p>Status: <%= booking.status %></p>
 
-        <% if booking.status == 'pending' %>
-            <%= button_to 'Accept', accept_booking_path(booking), method: :patch, class: "inline-form" %>
-            <%= button_to 'Decline', decline_booking_path(booking), method: :patch, form_class: "inline-form" %>
-        <% end %>
-      </li>
-    </div>
-    <% end %>
-    <h2>Please see a list of the booking requests you have made:</h2>
-      <% @user_bookings.each do | booking | %>
-          <div class="container mt-5">
-            <li>
-              <p>Booking Date: <%= booking.date %></p>
-              <p>Dog Name: <%= Dog.find_by(id: booking.dog_id).name %></p>
-              <p>Walker Comment: <%= booking.comment %></p>
-              <p>Status: <%= booking.status %></p>
-            </li>
-          </div>
+          <% if booking.status == 'pending' %>
+              <%= button_to 'Accept', accept_booking_path(booking), method: :patch, class: "inline-form" %>
+              <%= button_to 'Decline', decline_booking_path(booking), method: :patch, form_class: "inline-form" %>
+          <% end %>
+        </li>
+      </div>
       <% end %>
-    <%= link_to "Back to all Dogs", dogs_path %>
-  </ul>
+    </ul>
+  <% end %>
+
+  <h2>Booking requests you have made:</h2>
+  <% if @user_bookings.empty? %>
+    <p>No bookings.</p>
+  <% else %>
+    <ul>
+      <% @user_bookings.each do | booking | %>
+        <div class="container mt-5">
+          <li>
+            <p>Booking Date: <%= booking.date %></p>
+            <p>Dog Name: <%= Dog.find_by(id: booking.dog_id).name %></p>
+            <p>Walker Comment: <%= booking.comment %></p>
+            <p>Status: <%= booking.status %></p>
+          </li>
+        </div>
+      <% end %>
+    </ul>
+  <% end %>
+  <%= link_to "Back to all Dogs", dogs_path %>
 </div>

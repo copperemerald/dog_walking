@@ -15,10 +15,10 @@ image_url = 'https://res.cloudinary.com/dis9yhfev/image/upload/v1699703993/charl
 dog.photo.attach(io: URI.open(image_url), filename: 'dog.jpg', content_type: 'image/jpg')
 dog.save
 
-booking = Booking.new(date: "2023/11/02", comment: "Very excited")
-booking.user = user
-booking.dog = dog
-booking.save
+# booking = Booking.new(date: "2023/11/02", comment: "Very excited")
+# booking.user = user
+# booking.dog = dog
+# booking.save
 
 user = User.new(email: "dogwalking2@gmail.com", password: "pathword")
 user.save
@@ -27,10 +27,10 @@ dog.user = user
 image_url = 'https://res.cloudinary.com/dis9yhfev/image/upload/v1699703994/hermes-rivera-yeDt1JvaLBQ-unsplash_xavtdo.jpg'
 dog.photo.attach(io: URI.open(image_url), filename: 'dog.jpg', content_type: 'image/jpg')
 dog.save
-booking = Booking.new(date: "2023/11/21", comment: "Lots of fun")
-booking.user = user
-booking.dog = dog
-booking.save
+# booking = Booking.new(date: "2023/11/21", comment: "Lots of fun")
+# booking.user = user
+# booking.dog = dog
+# booking.save
 
 user = User.new(email: "dogwalking3@gmail.com", password: "pathword")
 user.save
@@ -39,9 +39,9 @@ dog.user = user
 image_url = 'https://res.cloudinary.com/dis9yhfev/image/upload/v1699703990/jen-b-CvZr-KELh2c-unsplash_gdwotv.jpg'
 dog.photo.attach(io: URI.open(image_url), filename: 'dog.jpg', content_type: 'image/jpg')
 dog.save
-booking = Booking.new(date: "2023/10/30", comment: "Exhausted")
-booking.user = user
-booking.dog = dog
-booking.save
+# booking = Booking.new(date: "2023/10/30", comment: "Exhausted")
+# booking.user = user
+# booking.dog = dog
+# booking.save
 
-puts "#{user.email} created a booking with #{dog.name} and booking #{Booking.count} "
+puts "#{user.email} created a booking with #{dog.name} and booking "
