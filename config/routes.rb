@@ -5,5 +5,10 @@ Rails.application.routes.draw do
   resources :dogs, only: [:index, :show, :new, :create] do
     resources :bookings, only: [:new, :create]
   end
-  resources :bookings, only: [:show, :index]
+  resources :bookings, only: [:show, :index] do
+    member do
+      patch :accept
+      patch :decline
+    end
+  end
 end
