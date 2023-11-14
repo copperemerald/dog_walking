@@ -1,11 +1,14 @@
-<div class="container mt-5">
-
+<div class="container">
+<br>
   <h1>Dogs available for walk</h1>
-
-  <ul>
+  <br>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+  Breakfast
+</div>
+  <ol>
     <% @dogs.each do |dog| %>
       <li>
-        <p><%= link_to dog.name, dog_path(dog) %></p>
+        <p><%= link_to dog.name, dog_path(dog), class: "btn-outline-dark" %></p>
         <p><%= dog.description %></p>
         <p><%= dog.location %></p>
          <% if dog.photo.attached? %>
@@ -16,7 +19,7 @@
 
       </li>
     <% end %>
-  </ul>
+  </ol>
 
  <%= link_to "Add a Dog", new_dog_path, class: "btn btn-secondary" %>
 </div>

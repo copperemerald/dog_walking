@@ -1,6 +1,9 @@
-<div class="container mt-5">
-  <h1> Find out all about <%= @dog.name %></h1>
-  <h2><%= @dog.description %></h2>
+<div class="container">
+  <br>
+  <br>
+  <h1> Find out all about <strong><%= @dog.name %></strong></h1>
+  <br>
+  <h4><%= @dog.description %></h4>
   <p><%= @dog.location %></p>
    <% if @dog.photo.attached? %>
     <%= cl_image_tag @dog.photo.key, height: 300, width: 400, crop: :fill %>
@@ -9,5 +12,5 @@
   <% end %>
 
    <%= link_to "Book this pup", new_dog_booking_path(@dog), class: "btn btn-secondary" %>
-   <%= link_to "Back to all dogs", dogs_path, class: "btn btn-secondary" %>
+   <%= link_to "Back to all dogs", dogs_path, class: "btn btn-outline-dark" %>
 </div>
