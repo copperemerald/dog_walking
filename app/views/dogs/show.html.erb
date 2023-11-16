@@ -8,7 +8,12 @@
   <% else %>
     <p>No Image Uploaded</p>
   <% end %>
-
+  <p> <%= @dog.booked %> </p>
    <%= link_to "Book this pup", new_dog_booking_path(@dog) %>
    <%= link_to "Back to all dogs", dogs_path %>
 </div>
+
+<%# <div data-controller="toggle" class="mt-5">
+  <button class="btn btn-outline-primary">Book this pup</button>
+  <%= render "form", booking: @booking %>
+<%# </div> %>
