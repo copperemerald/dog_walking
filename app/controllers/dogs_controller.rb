@@ -1,6 +1,21 @@
 class DogsController < ApplicationController
   def index
-    @dogs = Dog.all
+    if params[:query].present?
+      sql_subquery = <<~SQL
+        dogs.name @@ :query
+      SQL
+      @dogs = Dog.all.joins(:user).where(sql_subquery, query: params[:query])
+    else
+      @dogs = Dog.all
+    end
+
+    @markers = @dogs.geocoded.map do |dog|
+      {
+        lat: dog.latitude,
+        lng: dog.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {dog: dog})
+      }
+    end
   end
 
 
@@ -35,5 +50,3 @@ class DogsController < ApplicationController
     params.require(:dog).permit(:name, :description, :location, :photo, :user_id)
   end
 end
-
-

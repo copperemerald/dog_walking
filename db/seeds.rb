@@ -22,7 +22,7 @@ dog.save
 
 user = User.new(email: "dogwalking2@gmail.com", password: "pathword")
 user.save
-dog = Dog.new(name: "Bill", description: "likes treats", location: "Claremont")
+dog = Dog.new(name: "Bill", description: "likes treats", location: "Claremont, South Africa")
 dog.user = user
 image_url = 'https://res.cloudinary.com/dis9yhfev/image/upload/v1699703994/hermes-rivera-yeDt1JvaLBQ-unsplash_xavtdo.jpg'
 dog.photo.attach(io: URI.open(image_url), filename: 'dog.jpg', content_type: 'image/jpg')
