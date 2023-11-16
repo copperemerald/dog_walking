@@ -23,9 +23,12 @@ class BookingsController < ApplicationController
   end
 
   def index
-    # @bookings = Booking.all
-    @user_bookings = Booking.where(user_id: current_user)
-    @dog_bookings = Booking.joins(:dog).where(dogs: { user_id: current_user.id })
+    if current_user
+      @user_bookings = Booking.where(user_id: current_user)
+      @dog_bookings = Booking.joins(:dog).where(dogs: { user_id: current_user.id })
+    else
+      redirect_to new_user_session_path
+    end
   end
 
 
