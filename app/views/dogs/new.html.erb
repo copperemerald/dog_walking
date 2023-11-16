@@ -1,13 +1,16 @@
 <div class="container">
-  <h1>Create a new Dog Profile</h1>
+   <div class="cards" style="width: 27rem;">
+  <h2>Create a new Dog Profile</h2>
+ <div class="card-product-create">
 
+  <%= simple_form_for(@dog) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :location %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit%>
+  <% end %>
 
-<%= simple_form_for(@dog) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :location %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
-
+  </div>
+</div>
 </div>

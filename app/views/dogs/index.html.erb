@@ -4,23 +4,30 @@
   <div class="cards" style="width: 27rem;">
     <h2>Dogs available for walks</h2>
 
-  <ol>
     <% @dogs.each do |dog| %>
-      <li>
-        <p><%= link_to dog.name, dog_path(dog), class: "btn btn-secondary" %></p>
-        <p><%= dog.description %></p>
-        <p><%= dog.location %></p>
-         <% if dog.photo.attached? %>
-          <%= cl_image_tag dog.photo.key, height: 200, width: 300, crop: :fill %>
-            <% else %>
-            <p>No Image Uploaded</p>
-            <% end %>
-
-      </li>
-      <br>
+      <div class="card-product">
+        <div class="card-product-infos">
+          <h2><%= link_to dog.name, dog_path(dog) %></h2>
+          <p><%= dog.description %></p>
+          <p><%= dog.location %></p>
+        </div>
+        <% if dog.photo.attached? %>
+          <%= cl_image_tag dog.photo.key, crop: :fill %>
+        <% else %>
+          <p>No Image Uploaded</p>
+        <% end %>
+      </div>
     <% end %>
-  </ol>
   </div>
 
- <%= link_to "Add a Dog", new_dog_path, class: "btn btn-secondary" %>
+  <%= link_to "Add a Dog", new_dog_path, class: "btn btn-secondary" %>
 </div>
+<!--<div class="card-product">
+    <h2>Product name</h2>
+    <p>Product description with <strong>relevant info</strong> only.</p>
+  </div>
+    <%# if dog.photo.attached? %>-->
+          <%#= cl_image_tag dog.photo.key, height: 200, width: 300, crop: :fill %>
+            <%# else %>
+<!--            <p>No Image Uploaded</p>-->
+            <%# end %>

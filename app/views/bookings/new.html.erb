@@ -1,14 +1,31 @@
+<!--<div class="container">
+  <div class="cards" style="width: 27rem;">
+    <div class="card-product-create">
+     <h2>You are about to book some quality time with <%#= @dog.name %></h2>
+        <%#= simple_form_for [@dog, @booking] do |f| %>-->
+          <%#= f.label :date, class: "form-label" %>
+          <%#= f.input :date, class: "form-control" %>
+<!--        </div>
+        <div>
+          <%#= f.label :comment, class: "form-label" %>-->
+          <%#= f.input :comment, class: "form-control" %>
+<!--        </div>-->
+        <%#= f.submit "Create booking", class: "btn btn-secondary" %>
+      <%# end %>
+<!--    </div>
+  </div>
+</div>-->
+
 <div class="container mt-5">
-  <div class="card p-4">
-    <h2 class="mb-4">You are about to book some quality time with <%= @dog.name %></h2>
-    <div class="mb-3">
-      <%= simple_form_for [@dog, @booking] do |f| %>
+     <h2 class="mb-4">You are about to book some quality time with <%= @dog.name %></h2>
+      <div class="mb-3">
+        <%= simple_form_for [@dog, @booking] do |f| %>
         <div class="mb-3">
-          <%= f.label :date, class: "form-label" %>
+          <%#= f.label :date, class: "form-label" %>
           <%= f.input :date, class: "form-control" %>
         </div>
         <div class="mb-3">
-          <%= f.label :comment, class: "form-label" %>
+          <%#= f.label :comment, class: "form-label" %>
           <%= f.input :comment, class: "form-control" %>
         </div>
         <%= f.submit "Create booking", class: "btn btn-secondary" %>
