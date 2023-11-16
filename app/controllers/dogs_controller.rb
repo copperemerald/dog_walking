@@ -8,6 +8,13 @@ class DogsController < ApplicationController
         info_window_html: render_to_string(partial: "info_window", locals: {dog: dog})
       }
     end
+      if params[:query].present?
+          sql_subquery = <<~SQL
+            dogs.name @@ :query
+
+          SQL
+          @dogs = @dogs.joins(:user).where(sql_subquery, query: params[:query])
+      end
   end
 
 
