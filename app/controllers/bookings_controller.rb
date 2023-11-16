@@ -11,13 +11,13 @@ class BookingsController < ApplicationController
     @dog = Dog.find(params[:dog_id])
     @booking.dog = @dog
     @booking.user = current_user
-    puts @booking.valid?
+    # puts @booking.valid?
     if @booking.save
 
       # redirect_to booking_path(@booking), notice: 'Congrats, enjoy the walk!!'
       redirect_to bookings_path #notice: 'Congrats, enjoy the walk!!'
     else
-      puts @booking.errors.messages
+      # puts @booking.errors.messages
       render :new, status: :unprocessable_entity
     end
   end
