@@ -44,6 +44,9 @@ gem "bootsnap", require: false
 
 gem "devise"
 
+#datepicker
+gem "flatpickr"
+
 # Use Sass to process CSS
 gem "sassc-rails"
 
