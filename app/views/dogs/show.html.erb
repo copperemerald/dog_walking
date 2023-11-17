@@ -2,18 +2,18 @@
   <h1> Find out all about <strong style="color: green;"><%= @dog.name %></strong></h1>
   <br>
       <div class="card-product">
-      <h5>Description: <%= @dog.description %>
+      <h5> Description: <%= @dog.description %>
       <br>
       <br>
-      Location:  <%= @dog.location %></h5>
+       Location:  <%= @dog.location %></h5>
         <% if @dog.photo.attached? %>
         <%= cl_image_tag @dog.photo.key, height: 200, width: 300, crop: :fill%>
         <% else %>
         <p>No Image Uploaded</p>
         <% end %>
           </div>
-  <%= link_to "Book this pup", new_dog_booking_path(@dog) %>
-  <%= link_to "Back to all dogs", dogs_path %>
+  <%= link_to "Book this pup", new_dog_booking_path(@dog), class: "btn btn-secondary" %>
+  <%= link_to "Back to all dogs", dogs_path, class: "btn btn-secondary" %>
 </div>
 
 <!--   -->
