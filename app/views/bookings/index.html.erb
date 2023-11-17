@@ -1,24 +1,25 @@
-<div class="container mt-5 bg-secondary rounded">
-  <div class="row">
-    <div class="col-md-6">
-      <h2>Booking Requests for Your Dog</h2>
-      <% if @dog_bookings.empty? %>
-        <p>No bookings.</p>
-      <% else %>
-        <ul class="list-group">
+<div class="container">
+   <div class="cards" style="width: 27rem;">
+      <h2>Booking Requests for your Dog</h2>
+      <div class="card-product-create">
+         <div class="card-product-infos">
+          <% if @dog_bookings.empty? %>
+            <p>No bookings.</p>
+          <% else %>
+        <!--<ul class="list-group">-->
           <% @dog_bookings.each do |booking| %>
-            <li class="list-group-item">
+            <!--<li class="list-group-item">-->
               <p>Booking Date: <%= booking.date %></p>
               <p>Dog Name: <%= Dog.find_by(id: booking.dog_id).name %></p>
               <p>Walker Comment: <%= booking.comment %></p>
               <p>Status: <%= booking.status %></p>
               <% if booking.status == 'pending' %>
-                <%= button_to 'Accept', accept_booking_path(booking), method: :patch, class: 'btn btn-success btn-rounded me-2' %>
-                <%= button_to 'Decline', decline_booking_path(booking), method: :patch, class: 'btn btn-danger btn-rounded' %>
+                <%= button_to 'Accept', accept_booking_path(booking), method: :patch, class: 'btn-secondary' %>
+                <%= button_to 'Decline', decline_booking_path(booking), method: :patch, class: 'btn-secondary' %>
               <% end %>
-            </li>
+            <!--</li>-->
           <% end %>
-        </ul>
+        <!--</ul>-->
       <% end %>
     </div>
     <div class="col-md-6 ">
