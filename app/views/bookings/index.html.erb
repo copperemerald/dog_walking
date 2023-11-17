@@ -1,9 +1,9 @@
 <div class="container">
+
    <div class="cards" style="width: 27rem;">
-      <h2>Booking Requests for your Dog</h2>
+      <h2>Your Dog's Booking Requests</h2>
       <div class="card-product-create">
-        <div class="card-product-container">
-         <div class="card-product-infos">
+
           <% if @dog_bookings.empty? %>
             <p>No bookings.</p>
           <% else %>
@@ -23,10 +23,12 @@
         <!--</ul>-->
         <% end %>
     </div>
-    <div class="col-md-6 ">
+</div>
+
+    <div class="cards" style="width: 27rem;">
       <h2>Your Booking Requests</h2>
-       <div class="card-product-container">
-         <div class="card-product-infos">
+       <div class="card-product-create">
+
       <% if @user_bookings.empty? %>
         <p>No bookings.</p>
       <% else %>
@@ -43,7 +45,7 @@
       <% end %>
     </div>
   </div>
-  <div class="mt-3">
+  <!--<div class="mt-3">-->
     <%= link_to 'Back to all Dogs', dogs_path, class: 'btn btn-secondary' %>
   </div>
 </div>
