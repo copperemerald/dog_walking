@@ -19,9 +19,20 @@
   margin-bottom: 8px;
   justify-content: center;
 }
-.card-product-booking{
+.card-product-dogbooking{
   overflow: hidden;
-  height: 430px;
+  height: 240px;
+  width: 500px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  justify-content: center;
+}
+.card-product-yourbooking{
+  overflow: hidden;
+  height: 550px;
   width: 500px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
