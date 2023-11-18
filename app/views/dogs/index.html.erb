@@ -25,9 +25,9 @@
           <h2><%= link_to dog.name, dog_path(dog) %></h2>
           <p><%= dog.description %></p>
           <p><%= dog.location %></p>
-        </div>
-          <% if dog.photo.attached? %>
-            <%= cl_image_tag dog.photo.key, crop: :fill %>
+          </div>
+          <% if dog.photos.attached? %>
+            <%= cl_image_tag dog.photos.first.key, crop: :fill %>
               <% else %>
               <p>No Image Uploaded</p>
               <% end %>
