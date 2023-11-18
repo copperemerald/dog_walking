@@ -5,6 +5,27 @@ User.destroy_all
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 require 'open-uri'
+descriptions = ["Is a good boy", "likes treats", "Literal terrorist"]
+breeds = ["bluetick", "boxer", "bulldog/english", "bulldog/french"]
+dog_names = [
+  "Bella", "Max", "Lucy", "Charlie", "Molly",
+  "Buddy", "Daisy", "Bailey", "Maggie", "Sophie",
+  "Luna", "Rocky", "Sadie", "Toby", "Chloe",
+  "Coco", "Duke", "Zoe", "Riley", "Jack"
+]
+addresses = [
+  "Kloof Street, Gardens, Cape Town",
+  "Long Street, City Bowl, Cape Town",
+  "Camps Bay Drive, Camps Bay, Cape Town",
+  "Bree Street, City Centre, Cape Town",
+  "Adderley Street, Foreshore, Cape Town",
+  "Loop Street, City Bowl, Cape Town",
+  "Main Road, Sea Point, Cape Town",
+  "High Level Road, Fresnaye, Cape Town",
+  "Victoria Road, Clifton, Cape Town",
+  "Beach Road, Mouille Point, Cape Town"
+]
+
 
 user = User.new(email: "dogwalking@gmail.com", password: "pathword")
 user.save
@@ -45,3 +66,21 @@ dog.save
 # booking.save
 
 puts "#{user.email} created a booking with #{dog.name} and booking "
+
+puts 'Creating 10 dogs...'
+10.times do
+  # dog = Dog.new(
+  #   name:    Faker::Name,
+  #   address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
+  #   rating:  rand(0..5)
+  # )
+  # restaurant.save!
+
+  # Create a user
+  # new dog
+  # associate dog to user
+  # save dog
+  # call api for dog images
+  # associate with cloudinary
+end
+puts 'Finished!'
