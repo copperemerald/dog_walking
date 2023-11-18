@@ -2,7 +2,7 @@
 <br>
 <div class="container">
    <div class="cards" style="width: 27rem;">
-  <h2 class="dog-heading">Create a page for your Pup</h2>
+  <h2 class="dog-heading">Add your Pup</h2>
  <div class="card-product-create">
 
   <%= simple_form_for(@dog) do |f| %>
@@ -10,7 +10,7 @@
     <%= f.input :description %>
     <%= f.input :location %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.submit%>
+    <%= f.submit "Add", class:"btn btn-secondary"%>
   <% end %>
 
   </div>
