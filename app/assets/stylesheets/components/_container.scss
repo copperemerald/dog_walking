@@ -1,5 +1,11 @@
-
-  .container {
+.container-parent {
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+      height: 100vh;
+      padding: 2px 16px;
+      }
+.container {
     width: 500px;
     margin: 0 auto;
     /* height: 0 auto; */
@@ -7,15 +13,23 @@
     // display: grid
     }
 
-    .container-large {
-      width: 550px;
-      margin: 0 auto;
-      /* height: 0 auto; */
-      padding: 2px 16px;
-      // display: grid
-      }
+.container-large {
+  width: 550px;
+  margin: 0 auto;
+  display: flex;
+  /* height: 0 auto; */
+  padding: 2px 16px;
+  // display: grid
+  }
 
-      .container-bookings {
-        display: flex;
-        justify-content: space-evenly;
-      }
+.container-bookings {
+  display: flex;
+  justify-content: space-evenly;
+ }
+.container-map {
+  flex: 1;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  // margin: 0 auto;
+  }
