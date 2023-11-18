@@ -1,6 +1,6 @@
 <div class="container">
    <div class="cards" style="width: 27rem;">
-      <h2>You are about to book some quality time with <strong style="color: green;"><%= @dog.name %></strong></h2>
+      <h2 class="dog-heading">You are about to book some quality time with <strong style="color: green;"><%= @dog.name %></strong></h2>
       <div class="card-product-create">
         <%= simple_form_for [ @dog, @booking ], data: { controller: 'flatpickr' } do |f| %>
         <%= f.input :date, as: :string, input_html: { data: { flatpickr_target: "date" } } %>
@@ -10,4 +10,3 @@
       </div>
   </div>
 </div>
-

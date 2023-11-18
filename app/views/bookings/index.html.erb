@@ -1,6 +1,6 @@
 <div class="container-bookings">
    <div class="cards-product-bookings" style="width: 27rem;">
-      <h2>Your Dog's Booking Requests</h2>
+      <h2 class="dog-heading">Your Pup's Booking Requests</h2>
       <div class="card-product-create">
           <% if @dog_bookings.empty? %>
             <p>No bookings.</p>
@@ -25,7 +25,7 @@
     </div>
 </div>
     <div class="cards-product-bookings" style="width: 27rem;">
-      <h2>Your Booking Requests</h2>
+      <h2 class="dog-heading">Your Booking Requests</h2>
        <div class="card-product-create">
       <% if @user_bookings.empty? %>
         <p>No bookings.</p>
@@ -44,10 +44,10 @@
     </div>
   </div>
   </div>
-<button class="bottom-right-btn">
-<!--<div class="mt-3">-->
-<%= link_to 'Back to all Dogs', dogs_path, class: 'btn btn-secondary' %>
-</button>
+<!--<button class="bottom-right-btn">-->
+<div class="mt-3">
+<%#= link_to 'Back to all Dogs', dogs_path, class: 'btn btn-secondary' %>
+<!--</button>-->
 </div>
   </div>
 </div>
