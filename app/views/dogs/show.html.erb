@@ -2,43 +2,6 @@
 <br>
 <div class="container">
   <h1 class="dog-heading"> Find out all about <strong style="color: green;"><%= @dog.name %></strong></h1>
-  <br>
-      <div class="card-product">
-      <h5> <strong>Description:  </strong><%= @dog.description %>
-      <br>
-      <br>
-       <strong>Location:   </strong> <%= @dog.location %></h5>
-        <% if @dog.photos.attached? %>
-        <%= cl_image_tag @dog.photos.first.key, height: 200, width: 300, crop: :fill%>
-        <% else %>
-        <p>No Image Uploaded</p>
-        <% end %>
-          </div>
-  <%# <%= link_to "Book this pup", new_dog_booking_path(@dog), class: "btn btn-secondary" %>
-  <div data-controller="toggle">
-    <button class="btn btn-secondary mb-3" data-action= "click->toggle#display">Book this pup!!</button>
-       <div class="my-4 d-none" data-toggle-target="togleableElement">
-        <%= simple_form_for [ @dog, @booking ], data: { controller: 'flatpickr' } do |b| %>
-        <%= b.input :date, as: :string, input_html: { data: { flatpickr_target: "date" } } %>
-        <%= b.input :comment %>
-        <%= b.submit "Confirm Booking", class: "btn btn-secondary" %>
-        <% end %>
-      </div>
-  </div>
-  <%= link_to "Back to all dogs", dogs_path, class: "btn btn-secondary" %>
-</div>
-
-<!--   -->
-<!--<div class="container mt-5">-->
-<!--  <h1> Find out all about <%#= @dog.name %></h1>-->
-  <!--<h2><%#= @dog.description %></h2>-->
-  <!--<p><%#= @dog.location %></p>-->
-   <%# if @dog.photo.attached? %>
-    <%#= cl_image_tag @dog.photo.key, height: 300, width: 400, crop: :fill %>
-  <%# else %>
-<!--    <p>No Image Uploaded</p>-->
-  <%# end %>
-  <%# <p> <%= @dog.booked %>
 
 <div id="carouselDogs" class="carousel slide">
   <div class="carousel-inner">
@@ -58,3 +21,28 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+      <div class="card-product">
+       <h5 style="text-align: left; margin-left: 20px;">
+      <%= @dog.description %>
+      <br>
+      <br>
+    Lives in <%= @dog.location %></h5>
+        <%# if @dog.photos.attached? %>
+        <%#= cl_image_tag @dog.photos.first.key, height: 200, width: 300, crop: :fill%>
+        <%# else %>
+<!--        <p>No Image Uploaded</p>-->
+        <%# end %>
+      </div>
+      <div >
+      <div data-controller="toggle">
+       <button class="btn btn-secondary mb-3" data-action= "click->toggle#display">Book this pup!</button>
+       <div class="my-4 d-none" data-toggle-target="togleableElement">
+        <%= simple_form_for [ @dog, @booking ], data: { controller: 'flatpickr' } do |b| %>
+        <%= b.input :date, as: :string, input_html: { data: { flatpickr_target: "date" } } %>
+        <%= b.input :comment %>
+        <%= b.submit "Confirm Booking", class: "btn btn-secondary" %>
+        <% end %>
+        </div>
+        </div>
+        <br>
+        

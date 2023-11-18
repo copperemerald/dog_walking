@@ -4,11 +4,13 @@
       display: flex;
       height: 100vh;
       padding: 2px 16px;
+      border-radius: 8px;
       }
 .container {
     width: 700px;
     height: 500px;
     margin: 0 auto;
+    border-radius: 8px;
     /* height: 0 auto; */
     // padding: 2px 16px;
     // display: grid
@@ -22,6 +24,7 @@
   padding: 2px 16px;
   // display: grid
   text-align: left;
+  border-radius: 8px;
   }
 
 
@@ -31,6 +34,7 @@
 .container-bookings {
   display: flex;
   justify-content: space-evenly;
+  border-radius: 8px;
   // background-color: grey;
  }
 .container-map {
@@ -38,5 +42,6 @@
   position: sticky;
   top: 0;
   height: 100vh;
+  border-radius: 8px;
   // margin: 0 auto;
   }
