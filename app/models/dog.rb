@@ -2,7 +2,7 @@ class Dog < ApplicationRecord
   belongs_to :user
   has_many :bookings
   # adding info that has a picture attached
-  has_one_attached :photo
+  has_many_attached :photos
 
   # Validations for Dog:
 
