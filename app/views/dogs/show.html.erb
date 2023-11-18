@@ -6,8 +6,8 @@
       <br>
       <br>
        Location:  <%= @dog.location %></h5>
-        <% if @dog.photo.attached? %>
-        <%= cl_image_tag @dog.photo.key, height: 200, width: 300, crop: :fill%>
+        <% if @dog.photos.attached? %>
+        <%= cl_image_tag @dog.photos.first.key, height: 200, width: 300, crop: :fill%>
         <% else %>
         <p>No Image Uploaded</p>
         <% end %>

@@ -26,8 +26,8 @@
           <p><%= dog.description %></p>
           <p><%= dog.location %></p>
           </div>
-          <% if dog.photo.attached? %>
-            <%= cl_image_tag dog.photo.key, crop: :fill %>
+          <% if dog.photos.attached? %>
+            <%= cl_image_tag dog.photos.first.key, crop: :fill %>
               <% else %>
               <p>No Image Uploaded</p>
               <% end %>
