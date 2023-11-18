@@ -8,6 +8,7 @@
   margin-bottom: 10px;
   justify-content: space-between;
 }
+
 .card-product-create{
   overflow: hidden;
   height: 430px;
@@ -19,22 +20,11 @@
   margin-bottom: 8px;
   justify-content: center;
 }
-.card-product-dogbooking{
+.card-product-booking{
   overflow: hidden;
-  height: 240px;
+  height: 430px;
   width: 500px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  margin-bottom: 8px;
-  justify-content: center;
-}
-.card-product-yourbooking{
-  overflow: hidden;
-  height: 550px;
-  width: 500px;
-  background: white;
+  background: rgb(181, 24, 24);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
@@ -76,3 +66,27 @@
   padding: 56px;
   width: 240px;
 }
+
+// .card-product-yourbooking{
+  //   overflow: hidden;
+  //   height: 550px;
+  //   width: 500px;
+  //   background: white;
+  //   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  //   display: flex;
+  //   align-items: center;
+  //   margin-bottom: 8px;
+  //   justify-content: center;
+  // }
+
+  // .card-product-dogbooking{
+  //   overflow: hidden;
+  //   height: 240px;
+  //   width: 500px;
+  //   background: white;
+  //   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  //   display: flex;
+  //   align-items: center;
+  //   margin-bottom: 8px;
+  //   justify-content: center;
+  // }

@@ -2,7 +2,7 @@
 .btn-secondary{
   background-color: green;
   // color: white;
-  border-radius: 50px;
+  border-radius: 40px;
   // font-size: 20px;
   // font-family: "Open Sans";
 }
@@ -10,7 +10,14 @@
 .btn-outline-dark{
   // background-color: cyan;
   // color: white;
-  border-radius: 50px;
+  border-radius: 40px;
   // font-size: 20px;
   // font-family: "Open Sans";
+}
+.bottom-right-btn {
+  position: absolute;
+  bottom: 200px;
+  right: 190px;
+  border: 1px solid transparent;
+  outline: none;
 }
