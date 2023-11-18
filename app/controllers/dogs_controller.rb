@@ -20,7 +20,11 @@ class DogsController < ApplicationController
 
 
   def new
-    @dog = Dog.new
+    if current_user
+      @dog = Dog.new
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def create
@@ -42,6 +46,7 @@ class DogsController < ApplicationController
 
   def show
     @dog = Dog.find(params[:id])
+    @booking = Booking.new
   end
 
   private
