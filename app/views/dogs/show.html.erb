@@ -1,19 +1,29 @@
-
-<div class="container mt-5">
-  <h1> Find out all about <%= @dog.name %></h1>
-  <h2><%= @dog.description %></h2>
-  <p><%= @dog.location %></p>
-   <% if @dog.photo.attached? %>
-    <%= cl_image_tag @dog.photo.key, height: 300, width: 400, crop: :fill %>
-  <% else %>
-    <p>No Image Uploaded</p>
-  <% end %>
-  <%# <p> <%= @dog.booked %>
-   <%= link_to "Book this pup", new_dog_booking_path(@dog) %>
-   <%= link_to "Back to all dogs", dogs_path %>
+<div class="container">
+  <h1> Find out all about <strong style="color: green;"><%= @dog.name %></strong></h1>
+  <br>
+      <div class="card-product">
+      <h5> Description: <%= @dog.description %>
+      <br>
+      <br>
+       Location:  <%= @dog.location %></h5>
+        <% if @dog.photo.attached? %>
+        <%= cl_image_tag @dog.photo.key, height: 200, width: 300, crop: :fill%>
+        <% else %>
+        <p>No Image Uploaded</p>
+        <% end %>
+          </div>
+  <%= link_to "Book this pup", new_dog_booking_path(@dog), class: "btn btn-secondary" %>
+  <%= link_to "Back to all dogs", dogs_path, class: "btn btn-secondary" %>
 </div>
 
-<%# <div data-controller="toggle" class="mt-5">
-  <button class="btn btn-outline-primary">Book this pup</button>
-  <%= render "form", booking: @booking %>
-<%# </div> %>
+<!--   -->
+<!--<div class="container mt-5">-->
+<!--  <h1> Find out all about <%#= @dog.name %></h1>-->
+  <!--<h2><%#= @dog.description %></h2>-->
+  <!--<p><%#= @dog.location %></p>-->
+   <%# if @dog.photo.attached? %>
+    <%#= cl_image_tag @dog.photo.key, height: 300, width: 400, crop: :fill %>
+  <%# else %>
+<!--    <p>No Image Uploaded</p>-->
+  <%# end %>
+  <%# <p> <%= @dog.booked %>

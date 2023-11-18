@@ -1,10 +1,13 @@
 <div class="container">
-  <h2>You are about to book some quality time with <%= @dog.name %></h2>
-  <p> </p>
-  <%= simple_form_for [ @dog, @booking ], data: { controller: 'flatpickr' } do |f| %>
-    <%= f.input :date, as: :string, input_html: { data: { flatpickr_target: "date" } } %>
-    <%# <%= f.input :time, as: :string, input_html: { data: { flatpickr_target: "startTime"}} %>
-    <%= f.input :comment %>
-    <%= f.submit "Book this Pup", class: "btn btn-primary" %>
-  <% end %>
+   <div class="cards" style="width: 27rem;">
+      <h2>You are about to book some quality time with <strong style="color: green;"><%= @dog.name %></strong></h2>
+      <div class="card-product-create">
+        <%= simple_form_for [ @dog, @booking ], data: { controller: 'flatpickr' } do |f| %>
+        <%= f.input :date, as: :string, input_html: { data: { flatpickr_target: "date" } } %>
+        <%= f.input :comment %>
+        <%= f.submit "Book this Pup", class: "btn btn-secondary" %>
+        <% end %>
+      </div>
+  </div>
 </div>
+

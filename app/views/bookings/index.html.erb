@@ -1,46 +1,53 @@
-<div class="container mt-5">
+<div class="container">
 
+   <div class="cards" style="width: 27rem;">
+      <h2>Your Dog's Booking Requests</h2>
+      <div class="card-product-create">
 
-  <h2>Hi, <%= User.find_by(id: current_user).email %>
-  Booking requests to walk your dog: </h2>
-  <% if @dog_bookings.empty? %>
-    <p>No bookings.</p>
-  <% else %>
-    <ul>
-      <% @dog_bookings.each do | booking | %>
-      <div class="container mt-5">
-        <li>
-          <p>Booking Date: <%= booking.date %></p>
-          <p>Dog Name: <%= Dog.find_by(id: booking.dog_id).name %></p>
-          <p>Walker Comment: <%= booking.comment %></p>
-          <p>Status: <%= booking.status %></p>
-
-          <% if booking.status == 'pending' %>
-              <%= button_to 'Accept', accept_booking_path(booking), method: :patch, class: "inline-form" %>
-              <%= button_to 'Decline', decline_booking_path(booking), method: :patch, form_class: "inline-form" %>
+          <% if @dog_bookings.empty? %>
+            <p>No bookings.</p>
+          <% else %>
+        <!--<ul class="list-group">-->
+          <% @dog_bookings.each do |booking| %>
+            <!--<li class="list-group-item">-->
+              <p>Booking Date: <%= booking.date %></p>
+              <p>Dog Name: <%= Dog.find_by(id: booking.dog_id).name %></p>
+              <p>Walker Comment: <%= booking.comment %></p>
+              <p>Status: <%= booking.status %></p>
+              <% if booking.status == 'pending' %>
+                <%= button_to 'Accept', accept_booking_path(booking), method: :patch, class: 'btn-secondary' %>
+                <%= button_to 'Decline', decline_booking_path(booking), method: :patch, class: 'btn-secondary' %>
+              <% end %>
+            <!--</li>-->
           <% end %>
-        </li>
-      </div>
-      <% end %>
-    </ul>
-  <% end %>
+        <!--</ul>-->
+        <% end %>
+    </div>
+</div>
 
-  <h2>Booking requests you have made:</h2>
-  <% if @user_bookings.empty? %>
-    <p>No bookings.</p>
-  <% else %>
-    <ul>
-      <% @user_bookings.each do | booking | %>
-        <div class="container mt-5">
-          <li>
-            <p>Booking Date: <%= booking.date %></p>
-            <p>Dog Name: <%= Dog.find_by(id: booking.dog_id).name %></p>
-            <p>Walker Comment: <%= booking.comment %></p>
-            <p>Status: <%= booking.status %></p>
-          </li>
-        </div>
+    <div class="cards" style="width: 27rem;">
+      <h2>Your Booking Requests</h2>
+       <div class="card-product-create">
+
+      <% if @user_bookings.empty? %>
+        <p>No bookings.</p>
+      <% else %>
+        <ul class="list-group">
+          <% @user_bookings.each do |booking| %>
+            <li class="list-group-item">
+              <p>Booking Date: <%= booking.date %></p>
+              <p>Dog Name: <%= Dog.find_by(id: booking.dog_id).name %></p>
+              <p>Walker Comment: <%= booking.comment %></p>
+              <p>Status: <%= booking.status %></p>
+            </li>
+          <% end %>
+        </ul>
       <% end %>
-    </ul>
-  <% end %>
-  <%= link_to "Back to all Dogs", dogs_path %>
+    </div>
+  </div>
+  <!--<div class="mt-3">-->
+    <%= link_to 'Back to all Dogs', dogs_path, class: 'btn btn-secondary' %>
+  </div>
+</div>
+  </div>
 </div>
