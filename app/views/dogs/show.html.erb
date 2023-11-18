@@ -12,7 +12,17 @@
         <p>No Image Uploaded</p>
         <% end %>
           </div>
-  <%= link_to "Book this pup", new_dog_booking_path(@dog), class: "btn btn-secondary" %>
+  <%# <%= link_to "Book this pup", new_dog_booking_path(@dog), class: "btn btn-secondary" %>
+  <div data-controller="toggle">
+    <button class="btn btn-secondary mb-3" data-action= "click->toggle#display">Book this pup!!</button>
+       <div class="my-4 d-none" data-toggle-target="togleableElement">
+        <%= simple_form_for [ @dog, @booking ], data: { controller: 'flatpickr' } do |b| %>
+        <%= b.input :date, as: :string, input_html: { data: { flatpickr_target: "date" } } %>
+        <%= b.input :comment %>
+        <%= b.submit "Confirm Booking", class: "btn btn-secondary" %>
+        <% end %>
+      </div>
+  </div>
   <%= link_to "Back to all dogs", dogs_path, class: "btn btn-secondary" %>
 </div>
 
