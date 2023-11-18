@@ -1,13 +1,18 @@
-  <h2> Dogs available for walks</h2>
 <div class="container-large">
-
+  <br>
+  <h3> <div class="left-aligned-text">Dogs available for walks  </h3>
     <%= form_with url: dogs_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Find a Pup"%>
-      <%= submit_tag "Woof !", name: "", class: "btn btn-secondary" %>
-    <% end %>
+        <div class="input-group">
+            <%= text_field_tag :query,
+                params[:query],
+                class: "form-control rounded-search-bar",
+                placeholder: "Find a Pup" %>
+            <div class="input-group-append">
+                <%= submit_tag "Woof !", name: "", class: "btn btn-secondary-shape" %>
+            </div>
+        </div>
+    </div><% end %>
+</div>
 
 </div>
 <!--#parent div-->
