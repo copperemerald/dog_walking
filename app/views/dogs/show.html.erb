@@ -14,8 +14,18 @@
         <p>No Image Uploaded</p>
         <% end %>
           </div>
-  <%= link_to "Book this pup", new_dog_booking_path(@dog), class: "btn btn-secondary" %>
-  <%#= link_to "Back to all dogs", dogs_path, class: "btn btn-secondary" %>
+  <%# <%= link_to "Book this pup", new_dog_booking_path(@dog), class: "btn btn-secondary" %>
+  <div data-controller="toggle">
+    <button class="btn btn-secondary mb-3" data-action= "click->toggle#display">Book this pup!!</button>
+       <div class="my-4 d-none" data-toggle-target="togleableElement">
+        <%= simple_form_for [ @dog, @booking ], data: { controller: 'flatpickr' } do |b| %>
+        <%= b.input :date, as: :string, input_html: { data: { flatpickr_target: "date" } } %>
+        <%= b.input :comment %>
+        <%= b.submit "Confirm Booking", class: "btn btn-secondary" %>
+        <% end %>
+      </div>
+  </div>
+  <%= link_to "Back to all dogs", dogs_path, class: "btn btn-secondary" %>
 </div>
 
 <!--   -->
@@ -29,3 +39,22 @@
 <!--    <p>No Image Uploaded</p>-->
   <%# end %>
   <%# <p> <%= @dog.booked %>
+
+<div id="carouselDogs" class="carousel slide">
+  <div class="carousel-inner">
+    <% @dog.photos.each_with_index do |photo, index| %>
+     <div class="carousel-item <%= index == 0 ? 'active' : '' %>">
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class:"d-block" %>
+    </div>
+    <% end %>
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselDogs" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselDogs" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>

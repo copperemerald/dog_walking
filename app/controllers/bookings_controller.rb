@@ -10,22 +10,27 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
-    @dog = Dog.find(params[:dog_id])
-    @booking.dog = @dog
-    @booking.user = current_user
-    # puts @booking.valid?
-    if @booking.save
+    if current_user
+      @booking = Booking.new(booking_params)
+      @dog = Dog.find(params[:dog_id])
+      @booking.dog = @dog
+      @booking.user = current_user
+      # puts @booking.valid?
+      if @booking.save
 
-      # redirect_to booking_path(@booking), notice: 'Congrats, enjoy the walk!!'
-      redirect_to bookings_path #notice: 'Congrats, enjoy the walk!!'
+        # redirect_to booking_path(@booking), notice: 'Congrats, enjoy the walk!!'
+        redirect_to bookings_path #notice: 'Congrats, enjoy the walk!!'
+      else
+        # puts @booking.errors.messages
+        render :new, status: :unprocessable_entity
+      end
     else
-      # puts @booking.errors.messages
-      render :new, status: :unprocessable_entity
+      redirect_to new_user_session_path
     end
   end
 
   def index
+    # @bookings = Booking.all
     if current_user
       @user_bookings = Booking.where(user_id: current_user)
       @dog_bookings = Booking.joins(:dog).where(dogs: { user_id: current_user.id })
