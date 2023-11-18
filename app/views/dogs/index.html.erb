@@ -1,6 +1,8 @@
+<br>
+<br>
+<h3 class="dog-heading"> Pups waiting to meet you!  </h3>
 <div class="container-large">
   <br>
-  <h3> <div class="left-aligned-text">Dogs available for walks  </h3>
     <%= form_with url: dogs_path, method: :get, class: "d-flex" do %>
         <div class="input-group">
             <%= text_field_tag :query,
@@ -8,12 +10,13 @@
                 class: "form-control rounded-search-bar",
                 placeholder: "Find a Pup" %>
             <div class="input-group-append">
-                <%= submit_tag "Woof !", name: "", class: "btn btn-secondary-shape" %><%= link_to "Add a Dog", new_dog_path, class: "btn btn-secondary" %>
-            </div>
+                <%= submit_tag "Woof !", name: "", class: "btn btn-secondary-shape" %>
+                <%#= link_to "Add a Dog", new_dog_path, class: "btn btn-secondary" %>
+<!---->
         </div>
     </div><% end %>
 </div>
-
+<br>
 </div>
 <!--#parent div-->
 <div class="container-parent">
@@ -48,11 +51,3 @@
 <div class="row justify-content-center">
   <div class="col-sm-8 ">
 <br>
-  <br>-->
-
-  <%= link_to "Add a Dog", new_dog_path, class: "btn btn-secondary" %>
-  <!--</div>-->
-
-<!--</div>
-</div>
-</div>-->

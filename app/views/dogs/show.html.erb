@@ -1,11 +1,13 @@
+<br>
+<br>
 <div class="container">
-  <h1> Find out all about <strong style="color: green;"><%= @dog.name %></strong></h1>
+  <h1 class="dog-heading"> Find out all about <strong style="color: green;"><%= @dog.name %></strong></h1>
   <br>
       <div class="card-product">
-      <h5> Description: <%= @dog.description %>
+      <h5> <strong>Description:  </strong><%= @dog.description %>
       <br>
       <br>
-       Location:  <%= @dog.location %></h5>
+       <strong>Location:   </strong> <%= @dog.location %></h5>
         <% if @dog.photos.attached? %>
         <%= cl_image_tag @dog.photos.first.key, height: 200, width: 300, crop: :fill%>
         <% else %>
