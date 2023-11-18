@@ -5,6 +5,8 @@ User.destroy_all
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 require 'open-uri'
+require "json"
+
 descriptions = ["Is a good boy", "likes treats", "Literal terrorist"]
 breeds = ["bluetick", "boxer", "bulldog/english", "bulldog/french"]
 dog_names = [
@@ -77,10 +79,31 @@ puts 'Creating 10 dogs...'
   # restaurant.save!
 
   # Create a user
+  user = User.new(
+    email: Faker::Internet.email,
+    password: "123456"
+  )
+  user.save!
   # new dog
+  dog = Dog.new(
+    name: dog_names.sample,
+    description: descriptions.sample,
+    location: addresses.sample
+  )
   # associate dog to user
+  dog.user = user
   # save dog
+  dog.save!
   # call api for dog images
+
+  url = "https://dog.ceo/api/breed/#{breeds.sample}/images/random/#{rand(2..6)}"
+
+  dog_images_serialized = URI.open(url).read
+
+  dog_images_json = JSON.parse(dog_images_serialized)
+  dog_images = dog_images_json["message"]
+
+  # puts "#{user["name"]} - #{user["bio"]}"
   # associate with cloudinary
 end
 puts 'Finished!'
